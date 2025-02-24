@@ -27,7 +27,7 @@ const Index = () => {
     return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, []);
 
-  const handleBet = (amount: number) => {
+  const handleBet = (amount: number, selection: string) => {
     if (amount <= balance) {
       setBalance((prev) => prev - amount);
     }
@@ -39,7 +39,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen p-6 md:p-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 text-center">Apostas Online</h1>
+      <h1 className="text-4xl mb-8 text-center neon-title">Kleison Bet</h1>
       
       <Balance amount={balance} />
 

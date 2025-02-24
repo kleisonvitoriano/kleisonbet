@@ -33,6 +33,10 @@ const Index = () => {
     }
   };
 
+  const handleAddBalance = (amount: number) => {
+    setBalance((prev) => prev + amount);
+  };
+
   const handleExit = () => {
     window.location.href = "about:blank";
   };
@@ -41,7 +45,7 @@ const Index = () => {
     <div className="min-h-screen p-6 md:p-8 max-w-4xl mx-auto">
       <h1 className="text-4xl mb-8 text-center neon-title">Kleison Bet</h1>
       
-      <Balance amount={balance} />
+      <Balance amount={balance} onAddBalance={handleAddBalance} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {MATCHES.map((match) => (
